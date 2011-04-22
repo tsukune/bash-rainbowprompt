@@ -6,12 +6,11 @@ myhostname=`hostname -s`
 declare -i mojisu=${#myhostname}
 
 # 虹色化
+declare -a color=(red yellow green cyan blue magenda)
 declare -i i=0
 declare rainbowstr=
 
 while [ ${mojisu} -gt 0 ]; do
-   # 虹色
-   declare -a color=(red yellow green cyan blue magenda)
 
    # 文字を1文字切り出す
    declare -i order=$i+1
