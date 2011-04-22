@@ -14,7 +14,7 @@ if echo ${PS1} | grep "\\\\h" ; then
 
    while [ ${mojisu} -gt 0 ]; do
       declare -i order=$i+1
-      letter=`echo ${myhostname} | cut -c${order}`
+      letter=`echo ${sourcestr} | cut -c${order}`
 
       # Paint it rainbow
       iro=${color[$i%6]}
