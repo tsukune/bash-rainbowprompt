@@ -1,0 +1,10 @@
+# Bash-Rainbowprompt
+
+Paint your prompt in a rainbow colors.
+
+[bash]
+// rainbowprompt.sh
+$ wget https://github.com/tsukune/bash-rainbowprompt/rainbowprompt.sh
+$ . .bashrc
+
+
