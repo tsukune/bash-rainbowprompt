@@ -1,4 +1,11 @@
 # Bash-Rainbowprompt
 
-Paint your prompt in a rainbow colors.
+Rainbowize the hostname.
+
+```
+$ wget https://github.com/tsukune/bash-rainbowprompt/raw/master/rainbowprompt.sh --no-check-certificate
+$ . rainbowprompt.sh
+```
+
+
 
