@@ -49,6 +49,8 @@ if echo ${PS1} | grep "\\\\h" ; then
    str=`echo ${str}| sed -e "s:\\\\\\:\\\\\\\\\\\\\:g"`
    # insert a rainbow into PS1
    PS=`echo ${PS1} | sed -e "s:\\\\\\h:${str}:g"`
+   blank=`echo ' '`
+   PS=${PS}${blank}
    export PS1=${PS}
 else
    # print this message when $PS1 does not have \h
