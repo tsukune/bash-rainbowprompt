@@ -44,17 +44,21 @@ if echo ${PS1} | grep "\\\\h" ; then
    declare sourcestr=`hostname -s`
    rainbowize ${sourcestr}
    # convert the rainbowized hostname to do "export PS1"
-   src=`echo ${src} | sed -e "s:\(\\\\\\033\[\([0-9]\{2\}\);1m\([a-zA-Z ]\{1\}\)\\\\\\033\[0m[ ]\{0,\}\):\\\\\\\[\\\\\\033\[\2;1m\\\\\\\]\3\\\\\\\[\\\\\\\033\[0m\\\\\\\]:g"`
+   str=`echo ${str} | sed -e "s:\(\\\\\\033\[\([0-9]\{2\}\);1m\([a-zA-Z0-9 ]\{1\}\)\\\\\\033\[0m[ ]\{0,\}\):\\\\\\\[\\\\\\033\[\2;1m\\\\\\\]\3\\\\\\\[\\\\\\\033\[0m\\\\\\\]:g"`
    # escape backslash
-   str=`echo ${str}|sed -e "s:\\\\\\\\:\\\\\\\\\\\\\\\\:g"`
+   str=`echo ${str}| sed -e "s:\\\\\\:\\\\\\\\\\\\\:g"`
    # insert a rainbow into PS1
-   PS=`echo ${PS1} | sed -e "s:\\\\\h:${str}:g"`
+   PS=`echo ${PS1} | sed -e "s:\\\\\\h:${str}:g"`
    export PS1=${PS}
 else
    # print this message when $PS1 does not have \h
    declare message='Your $PS1 does not have the hostname. Add "\h" to your $PS to see a rainbow.'
    rainbowize ${message}
    echo -e ${str}
+   echo ""
+   echo 'Your $PS1:'
+   echo "$PS1"
+   echo ""
 fi
 
 
